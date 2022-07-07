@@ -1,5 +1,5 @@
 -   id: google-java-format
-    name: Java formatter
+    name: Reformat Java
     description: Reformat Java source code to comply with Google Java Style.
     entry: ./format-code.sh
     language: script
