@@ -1,6 +1,6 @@
-#!/usr/bin/env sh
+x#!/usr/bin/env sh
 
-VERSION=1.15.0
+VERSION=1.24.0
 JARFILE=google-java-format-$VERSION-all-deps.jar
 
 mkdir -p .cache
