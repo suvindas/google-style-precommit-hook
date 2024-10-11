@@ -1,4 +1,4 @@
-x#!/usr/bin/env sh
+#!/usr/bin/env sh
 
 VERSION=1.24.0
 JARFILE=google-java-format-$VERSION-all-deps.jar
