@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-VERSION=1.25.2
+VERSION=1.25.2 # Or your preferred version
 JARFILE=google-java-format-$VERSION-all-deps.jar
 
 mkdir -p .cache
@@ -13,15 +13,15 @@ fi
 
 cd ..
 
-changed_java_files=$(git diff --cached --name-only --diff-filter=ACMR | grep ".*\.java$" )
+# Find all Java files in the project
+java_files=$(find . -name "*.java") # Find all .java files
 
-if [[ -n "$changed_java_files" ]]; then  # Check if any files were found
-    echo "Formatting these files:"
-    echo "$changed_java_files"
+if [[ -n "$java_files" ]]; then
+    echo "Formatting all Java files:"
+    echo "$java_files"
 
-    # Use xargs to handle potential spaces in filenames
-    echo "$changed_java_files" | xargs -0 -n 1 java -jar .cache/"$JARFILE" --aosp --replace
+    echo "$java_files" | xargs -0 -n 1 java -jar .cache/"$JARFILE" --aosp --replace # Use xargs for robust filename handling
 
 else
-    echo "No staged Java files found to format."
+    echo "No Java files found in the project."
 fi
